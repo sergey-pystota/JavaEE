@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -29,15 +31,14 @@
             <div class="form-group col-md-4">
                 <label for="checkpassword">Repeat your password</label>
                 <input type="password" class="form-control" id="checkpassword" name="checkpassword">
-                <%
-                    if (request.getAttribute("not_equal_passwords_error") != null) {
-                %>
-                <small id="passwordHelp" class="text-danger">
+                <c:if var= "${not_equal_passwords_error != null}">
+                    <small id="passwordHelp" class="text-danger">
                     ${not_equal_passwords_error}
-                </small>
-                <%
-                    }
-                %>
+                    </small>
+                    </c:if>
+
+
+
             </div>
     </div>
     <div class="form-group">

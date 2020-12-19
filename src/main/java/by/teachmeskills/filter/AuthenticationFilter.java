@@ -10,11 +10,10 @@ import java.util.List;
 @WebFilter(urlPatterns = "/*")
 public class AuthenticationFilter implements Filter {
 
-    private static final List<String> PUBLIC_PAGES = List.of("/registration", "/login", "/startpage","/profile");
+    private static final List<String> PUBLIC_PAGES = List.of("/registration", "/login", "/startpage", "/profile");
 
     @Override
     public void init(FilterConfig filterConfig) {
-
     }
 
     @Override

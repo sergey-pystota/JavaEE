@@ -5,7 +5,6 @@ public class User {
     private String name;
     private String surname;
     private String email;
-
     private String password;
 
     public User() {
@@ -43,8 +42,6 @@ public class User {
         this.email = email;
     }
 
-
-
     public String getPassword() {
         return password;
     }
@@ -53,7 +50,7 @@ public class User {
         this.password = password;
     }
 
-    public User(long id, String name, String surname, String email,  String password) {
+    public User(long id, String name, String surname, String email, String password) {
         this.id = id;
         this.name = name;
         this.surname = surname;
