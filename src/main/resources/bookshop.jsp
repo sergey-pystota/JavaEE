@@ -25,9 +25,25 @@
     Title: ${books.title}
     Author: ${books.author}
     Description: ${books.description}
-    Year of Publishing: ${books.year}
+<%--    Year of Publishing: ${books.year}--%>
     Price: ${books.price}$
     <br>
 </c:forEach>
+
+    <h2>Clients:</h2>
+
+    <c:forEach var="client" items="${clients}">
+
+        ID: ${client.id}
+        first name: ${client.firstName}
+        last name: ${client.lastName}
+        Address : ${client.address.city}  ${client.address.street}  ${client.address.building}
+        ${client.address.apartment}
+
+               <br>
+
+</c:forEach>
+
+
 </body>
 </html>
