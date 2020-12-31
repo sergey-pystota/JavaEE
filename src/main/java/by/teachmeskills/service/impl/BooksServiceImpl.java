@@ -2,13 +2,11 @@ package by.teachmeskills.service.impl;
 
 import by.teachmeskills.converter.IConverter;
 import by.teachmeskills.converter.product.BookConverter;
-import by.teachmeskills.dao.books.BooksDAO;
 import by.teachmeskills.dao.exceptions.DAOException;
 import by.teachmeskills.dao.impl.mysql.books.MySQLBooksDAO;
-import by.teachmeskills.module.book.BookEntity;
+import by.teachmeskills.entity.book.BookEntity;
 import by.teachmeskills.service.BookService;
 import by.teachmeskills.service.dto.BookDTO;
-import by.teachmeskills.service.dto.BookDTOService;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -54,5 +52,6 @@ public class BooksServiceImpl implements BookService<BookEntity> {
     public List<BookDTO> getAllBooks() {
         return converter.convertAll(dao.getAll());
     }
+
 
 }
