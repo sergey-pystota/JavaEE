@@ -1,4 +1,4 @@
-package by.teachmeskills.module.book;
+package by.teachmeskills.entity.book;
 
 public class BookFields {
     public static final String ID = "id";

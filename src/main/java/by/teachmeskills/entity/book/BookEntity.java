@@ -1,13 +1,34 @@
-package by.teachmeskills.module.book;
+package by.teachmeskills.entity.book;
 
-import by.teachmeskills.module.Entity;
+import by.teachmeskills.entity.Entity;
+import by.teachmeskills.entity.order.OrderEntity;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@javax.persistence.Entity
+@Table(name = "books")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
 public class BookEntity extends Entity {
+
     private String title;
     private String author;
     private String description;
+    @Column(name = "year")
     private int publishingYear;
     private double price;
+
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "orders_books", joinColumns = {
+            @JoinColumn(name = "books_id_fk", referencedColumnName = "id")
+    }, inverseJoinColumns = {
+         @JoinColumn  (name = "orders_id_fk", referencedColumnName = "id")
+    })
+private List<OrderEntity> orders;
 
     public BookEntity() {
     }
@@ -20,6 +41,9 @@ public class BookEntity extends Entity {
         this.description = description;
         this.publishingYear = publishingYear;
         this.price = price;
+    }
+    public List<OrderEntity> getOrders() {
+        return new ArrayList<>(orders);
     }
 
     public String getTitle() {
@@ -61,5 +85,7 @@ public class BookEntity extends Entity {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
 }
 
