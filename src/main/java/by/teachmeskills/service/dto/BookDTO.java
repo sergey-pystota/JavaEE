@@ -1,13 +1,23 @@
 package by.teachmeskills.service.dto;
 
-public class BookDTO {
+public class BookDTO extends EntityDTO{
     private String title;
     private String author;
     private String description;
     private double price;
 
     public BookDTO() {
+
     }
+
+    public BookDTO(long id, String title, String author, String description, double price) {
+        super(id);
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.price = price;
+    }
+
 
     public String getTitle() {
         return title;
